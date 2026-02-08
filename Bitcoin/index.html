@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Portfolio Tracker v2</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark">
+
+<div class="container">
+  <div class="header">
+    <h1>Crypto Portfolio Tracker v2</h1>
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <div class="selectors">
+    <label>Currency:
+      <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="portfolio">
+    <table>
+      <thead>
+        <tr>
+          <th>Crypto</th>
+          <th>Holdings</th>
+          <th>Avg Buy Price</th>
+          <th>Current Price</th>
+          <th>Value</th>
+          <th>P/L %</th>
+          <th>Alert %</th>
+        </tr>
+      </thead>
+      <tbody id="portfolioBody">
+        <tr data-symbol="BTCUSDT">
+          <td>BTC</td>
+          <td><input type="number" class="holdings" step="any"></td>
+          <td><input type="number" class="avgPrice" step="any"></td>
+          <td class="price">-</td>
+          <td class="value">-</td>
+          <td class="pl">-</td>
+          <td><input type="number" class="alertPercent" placeholder="%" step="any"></td>
+        </tr>
+        <tr data-symbol="ETHUSDT">
+          <td>ETH</td>
+          <td><input type="number" class="holdings" step="any"></td>
+          <td><input type="number" class="avgPrice" step="any"></td>
+          <td class="price">-</td>
+          <td class="value">-</td>
+          <td class="pl">-</td>
+          <td><input type="number" class="alertPercent" placeholder="%" step="any"></td>
+        </tr>
+        <tr data-symbol="DOGEUSDT">
+          <td>DOGE</td>
+          <td><input type="number" class="holdings" step="any"></td>
+          <td><input type="number" class="avgPrice" step="any"></td>
+          <td class="price">-</td>
+          <td class="value">-</td>
+          <td class="pl">-</td>
+          <td><input type="number" class="alertPercent" placeholder="%" step="any"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Total Portfolio Value</th>
+          <th id="totalPortfolio">-</th>
+          <th id="totalPL">-</th>
+          <th>-</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <h2>Historical Price Charts</h2>
+  <div id="chartsContainer"></div>
+
+  <h2>Total Portfolio Value Over Time</h2>
+  <canvas id="portfolioChart"></canvas>
+
+  <div class="calculator">
+    <h2>Buy/Sell Calculator</h2>
+    <select id="calcCrypto">
+      <option value="BTCUSDT">BTC</option>
+      <option value="ETHUSDT">ETH</option>
+      <option value="DOGEUSDT">DOGE</option>
+    </select>
+    <input type="number" id="qty" placeholder="Quantity" step="any">
+    <select id="action">
+      <option value="buy">Buy</option>
+      <option value="sell">Sell</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <p id="calcResult">Total: --</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

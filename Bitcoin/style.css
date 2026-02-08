@@ -1,0 +1,21 @@
+body { margin:0; padding:0; font-family: Arial,sans-serif; display:flex; justify-content:center; align-items:flex-start; min-height:100vh; transition:0.3s; }
+body.dark { background:#121212; color:#fff; }
+body.light { background:#f2f2f2; color:#000; }
+
+.container { width:95%; max-width:600px; background:inherit; border-radius:12px; padding:20px; margin:20px; box-shadow:0 0 20px rgba(0,0,0,0.3); }
+
+.header { display:flex; justify-content:space-between; align-items:center; }
+.theme-btn { background:#ff9800; border:none; padding:6px 10px; border-radius:5px; cursor:pointer; font-size:16px; }
+
+.selectors { margin:15px 0; }
+.selectors select { padding:6px; border-radius:5px; border:none; }
+
+table { width:100%; border-collapse:collapse; margin-bottom:15px; }
+table th, table td { padding:8px; text-align:center; border-bottom:1px solid #ccc; }
+table input { width:60px; text-align:center; }
+
+canvas { margin-bottom:15px; background: rgba(255,255,255,0.05); border-radius:8px; width:100%; }
+
+.calculator { display:flex; flex-direction:column; gap:10px; }
+.calculator input, .calculator select, .calculator button { padding:8px; border-radius:5px; border:none; }
+.calculator button { background:#ff9800; color:#fff; cursor:pointer; }
